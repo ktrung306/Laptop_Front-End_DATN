@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <View
+        android:id="@+id/view_header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_52"
+        android:background="#AADFEF"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_back_arrow"
+        android:layout_width="@dimen/dp_30"
+        android:layout_height="@dimen/dp_30"
+        android:layout_marginStart="@dimen/dp_16"
+        android:background="@drawable/circular_image_button"
+        android:contentDescription="@string/todo"
+        android:padding="@dimen/dp_5"
+        android:scaleType="fitXY"
+        android:src="@drawable/baseline_arrow_back_ios_new_36"
+        app:layout_constraintBottom_toBottomOf="@id/view_header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/view_header" />
+
+    <TextView
+        android:id="@+id/txt_header"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/dp_5"
+        android:layout_marginEnd="@dimen/dp_5"
+        android:gravity="center"
+        android:text="Sản phẩm giảm giá"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_22"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_shopping_cart"
+        android:layout_width="@dimen/dp_32"
+        android:layout_height="@dimen/dp_32"
+        android:layout_marginEnd="@dimen/sp_16"
+        android:background="@color/transparent"
+        android:contentDescription="@string/todo"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_shopping_cart_36"
+        app:layout_constraintBottom_toBottomOf="@id/view_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/view_header" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_product"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/dp_8"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_header"
+        tools:listitem="@layout/item_popular_product" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

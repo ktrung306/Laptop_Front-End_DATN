@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.fragment.AccountFragment">
+
+    <View
+        android:id="@+id/view_header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_52"
+        android:background="#AADFEF"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/dp_5"
+        android:layout_marginEnd="@dimen/dp_5"
+        android:gravity="center"
+        android:text="Tài khoản"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_22"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/image_view_avatar"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="@dimen/dp_100"
+        android:layout_marginTop="@dimen/dp_12"
+        android:contentDescription="@string/todo"
+        android:scaleType="fitXY"
+        android:src="@drawable/avatar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_header"
+        app:shapeAppearanceOverlay="@style/CircleImageViewShape" />
+
+    <TextView
+        android:id="@+id/txt_username"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_5"
+        android:layout_marginEnd="@dimen/dp_5"
+        android:gravity="center"
+        android:text="ADMIN"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_20"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_avatar" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_change_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_16"
+        android:padding="@dimen/dp_4"
+        app:cardCornerRadius="@dimen/dp_8"
+        app:layout_constraintTop_toBottomOf="@+id/txt_username">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_60"
+            android:background="#D6E9F3"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/dp_45"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/dp_12"
+                android:src="@drawable/ic_security"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginEnd="@dimen/dp_12"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="Đổi mật khẩu"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_20"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="@dimen/dp_24"
+                android:layout_height="@dimen/dp_24"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/dp_12"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/ic_arrow_24" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_revenue_statistics"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_16"
+        android:padding="@dimen/dp_4"
+        app:cardCornerRadius="@dimen/dp_8"
+        app:layout_constraintTop_toBottomOf="@+id/cv_change_password">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_60"
+            android:background="#FEC0C0"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/dp_45"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/dp_12"
+                android:src="@drawable/ic_statistical"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginEnd="@dimen/dp_12"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="Thống kê doanh thu"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_20"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="@dimen/dp_24"
+                android:layout_height="@dimen/dp_24"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/dp_12"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/ic_arrow_24" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_log_out"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_16"
+        android:background="#F9F9CE"
+        android:padding="@dimen/dp_4"
+        app:cardCornerRadius="@dimen/dp_8"
+        app:layout_constraintTop_toBottomOf="@+id/cv_revenue_statistics">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_60"
+            android:background="#EBE9E9"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/dp_45"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/dp_12"
+                android:src="@drawable/ic_logout"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginEnd="@dimen/dp_12"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="Đăng xuất"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_20"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="@dimen/dp_24"
+                android:layout_height="@dimen/dp_24"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/dp_12"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/ic_arrow_24" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

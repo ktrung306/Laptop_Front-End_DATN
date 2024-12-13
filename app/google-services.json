@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "823029847904",
+    "project_id": "sale-laptop",
+    "storage_bucket": "sale-laptop.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:823029847904:android:eb71c8c34190d7297bb005",
+        "android_client_info": {
+          "package_name": "com.hcm.sale_laptop"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBC4WcQdKWh7tgjA58rO-tFGtaUrj7Ya70"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_background"
+    android:elevation="@dimen/dp_8"
+    android:orientation="vertical"
+    android:padding="@dimen/dp_1">
+
+    <TextView
+        android:id="@+id/tvDialogTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/transparent"
+        android:gravity="center"
+        android:padding="@dimen/dp_10"
+        android:text="BẠN CÓ MUỐN HỦY ĐƠN"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+
+    <EditText
+        android:id="@+id/etReason"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_150"
+        android:layout_margin="@dimen/dp_8"
+        android:layout_marginBottom="16dp"
+        android:background="@android:color/white"
+        android:gravity="top|start"
+        android:hint="Hãy chia sẻ lý do tại sao bạn hủy đơn hàng này nhé !"
+        android:inputType="textMultiLine"
+        android:padding="8dp"
+        android:scrollbars="vertical"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/darker_gray"
+        tools:ignore="Autofill" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnCancelOrder"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_50"
+            android:layout_marginEnd="-1dp"
+            android:layout_weight="1"
+            android:background="@drawable/round_bottom_button"
+            android:padding="@dimen/dp_12"
+            android:text="HUỶ ĐƠN"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_18" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnExit"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_50"
+            android:layout_marginStart="-1dp"
+            android:layout_weight="1"
+            android:background="@drawable/round_bottom_button"
+            android:padding="@dimen/dp_12"
+            android:text="THOÁT"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_18" />
+    </LinearLayout>
+
+</LinearLayout>

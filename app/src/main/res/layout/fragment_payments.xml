@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/dp_1"
+    android:background="@color/white">
+
+    <View
+        android:id="@+id/view_header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_52"
+        android:background="#79E277"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_back_arrow"
+        android:layout_width="@dimen/dp_30"
+        android:layout_height="@dimen/dp_30"
+        android:layout_marginStart="@dimen/dp_16"
+        android:background="@drawable/circular_image_button"
+        android:contentDescription="@string/todo"
+        android:padding="@dimen/dp_5"
+        android:scaleType="fitXY"
+        android:src="@drawable/baseline_arrow_back_ios_new_36"
+        app:layout_constraintBottom_toBottomOf="@id/view_header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/view_header" />
+
+    <TextView
+        android:id="@+id/txt_header"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/dp_5"
+        android:layout_marginEnd="@dimen/dp_5"
+        android:gravity="center"
+        android:text="Thanh toán"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_22"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/txt_time_warning"
+        app:layout_constraintTop_toBottomOf="@+id/txt_header">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/btn_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_12"
+                android:background="@color/transparent"
+                android:src="@drawable/ic_location_pin_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/txt_title_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_8"
+                android:text="Địa chỉ nhận hàng"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_17"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/btn_location"
+                app:layout_constraintStart_toEndOf="@id/btn_location"
+                app:layout_constraintTop_toTopOf="@id/btn_location" />
+
+            <ImageButton
+                android:id="@+id/btn_edit_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:background="@color/transparent"
+                android:src="@drawable/ic_edit_location_24"
+                app:layout_constraintBottom_toBottomOf="@id/btn_location"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/btn_location"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/txt_address"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:textSize="@dimen/sp_17"
+                app:layout_constraintEnd_toStartOf="@id/btn_edit_location"
+                app:layout_constraintStart_toStartOf="@+id/txt_title_address"
+                app:layout_constraintTop_toBottomOf="@+id/btn_edit_location" />
+
+            <View
+                android:id="@+id/line1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_6"
+                android:layout_marginTop="@dimen/dp_6"
+                android:background="#D9D9D9"
+                app:layout_constraintTop_toBottomOf="@+id/txt_address" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_product_cart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_8"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_8"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toTopOf="@id/line2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line1"
+                tools:listitem="@layout/item_cart" />
+
+            <View
+                android:id="@+id/line2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_6"
+                android:background="#D9D9D9"
+                app:layout_constraintTop_toBottomOf="@+id/rv_product_cart" />
+
+            <TextView
+                android:id="@+id/txt_estimate"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginEnd="@dimen/dp_12"
+                android:gravity="center_vertical"
+                android:text="Dự kiến thời gian nhận hàng: 2 - 5 ngày"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintTop_toBottomOf="@id/line2" />
+
+            <View
+                android:id="@+id/line3"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_6"
+                android:background="#D9D9D9"
+                app:layout_constraintTop_toBottomOf="@+id/txt_estimate" />
+
+            <ImageView
+                android:id="@+id/img_payment"
+                android:layout_width="@dimen/dp_32"
+                android:layout_height="@dimen/dp_32"
+                android:layout_marginStart="@dimen/dp_14"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginBottom="@dimen/dp_8"
+                android:background="@color/transparent"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_payment"
+                app:layout_constraintBottom_toTopOf="@id/line4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line3"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginEnd="@dimen/dp_12"
+                android:gravity="center_vertical"
+                android:text="Thanh toán khi nhận hàng"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintBottom_toBottomOf="@+id/img_payment"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/img_payment" />
+
+            <View
+                android:id="@+id/line4"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_6"
+                android:layout_marginTop="@dimen/dp_8"
+                android:background="#D9D9D9"
+                app:layout_constraintTop_toBottomOf="@+id/img_payment" />
+
+            <ImageView
+                android:id="@+id/img_detail_payment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginTop="@dimen/dp_12"
+                android:src="@drawable/ic_event_note_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line4"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginEnd="@dimen/dp_12"
+                android:gravity="center_vertical"
+                android:text="Chi tiết thanh toán"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintBottom_toBottomOf="@+id/img_detail_payment"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@id/img_detail_payment"
+                app:layout_constraintTop_toTopOf="@id/img_detail_payment" />
+
+            <TextView
+                android:id="@+id/txt_amount_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginTop="@dimen/dp_16"
+                android:text="Tổng tiền hàng"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_detail_payment" />
+
+            <TextView
+                android:id="@+id/txt_amount_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginTop="@dimen/dp_4"
+                android:text="Tổng tiền phí vận chuyển"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_amount_1" />
+
+            <TextView
+                android:id="@+id/txt_amount_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginTop="@dimen/dp_4"
+                android:text="Tiền giảm giá sản phẩm"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_amount_2" />
+
+            <TextView
+                android:id="@+id/txt_amount_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginTop="@dimen/dp_12"
+                android:text="Tổng thanh toán"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_amount_3" />
+
+            <TextView
+                android:id="@+id/txt_total_order_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_4"
+                android:layout_marginEnd="@dimen/dp_12"
+                android:text="Tiền giảm giá sản phẩm"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintBottom_toBottomOf="@id/txt_amount_1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/txt_amount_1" />
+
+            <TextView
+                android:id="@+id/txt_total_shipping_cost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_4"
+                android:layout_marginEnd="@dimen/dp_12"
+                android:text="Tiền giảm giá sản phẩm"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintBottom_toBottomOf="@id/txt_amount_2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/txt_amount_2" />
+
+            <TextView
+                android:id="@+id/txt_discount_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_4"
+                android:layout_marginEnd="@dimen/dp_12"
+                android:text="Tiền giảm giá sản phẩm"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintBottom_toBottomOf="@id/txt_amount_3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/txt_amount_3" />
+
+            <TextView
+                android:id="@+id/txt_total_payment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_4"
+                android:layout_marginEnd="@dimen/dp_12"
+                android:text="Tiền giảm giá sản phẩm"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintBottom_toBottomOf="@id/txt_amount_4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/txt_amount_4" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <TextView
+        android:id="@+id/txt_time_warning"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_60"
+        android:layout_marginStart="@dimen/dp_1"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginBottom="@dimen/dp_1"
+        android:background="@drawable/rounded_corners_textview"
+        android:gravity="center"
+        android:text="Lưu ý: Bạn chỉ có thể hủy đơn hàng
+trong vòng 24h khi ấn “ĐẶT HÀNG”"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView"
+        app:layout_constraintWidth_percent="0.62" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_payment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="-2dp"
+        android:layout_marginEnd="@dimen/dp_1"
+        android:background="@drawable/rounded_corners_button_order"
+        android:text="ĐẶT HÀNG"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_22"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_time_warning"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/txt_time_warning"
+        app:layout_constraintTop_toTopOf="@id/txt_time_warning" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.fragment.InfoFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#AADFEF"
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_4"
+                android:layout_marginEnd="@dimen/dp_5"
+                android:gravity="center"
+                android:text="THÔNG TIN"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_22"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_5"
+                android:layout_marginEnd="@dimen/dp_5"
+                android:layout_marginBottom="@dimen/dp_4"
+                android:gravity="center"
+                android:text="Cơ bản khi mua laptop"
+                android:textColor="#5C5252"
+                android:textSize="@dimen/sp_20" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/dp_8">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. RAM"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_15"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_2"
+                android:text="RAM là thành phần rất quan trọng trên máy tính, nó đóng vai trò bộ nhớ đệm, tạo không gian khi bạn chạy ứng dụng. Dù là bạn duyệt web, xem phim hay nghe nhạc cũng đều khá “ngốn” RAM và nếu RAM bị đầy thì máy sẽ dễ bị giật, lag.
+Với thời đại công nghệ thông tin như hiện nay, tốt nhất bạn nên chọn mua máy có từ 4GB RAM trở lên. Thậm chí nếu bạn làm đồ họa hay chơi game thì nên chọn máy có 8GB RAM."
+                android:textColor="#A6A3A3"
+                android:textSize="@dimen/sp_15" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_12"
+                android:text="2. Vi xử lý"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_15"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_2"
+                android:text="Vi xử lý ( thường quen gọi là chip) là một trong những yếu tố chính quyết định tốc độ của máy. Tùy theo nhu cầu sử dụng mà bạn sẽ chọn bộ vi xử lý phù hợp. Một số lưu ý bạn cần để ý khi xem chip trên máy như sau. Một con chip laptop thông thường sẽ có 4 số và một chữ, ví dụ 7100U. Trong đó con số đầu tiên chính là đời chip. Nếu yêu cầu một chiếc laptop chạy mượt mà bạn nên cố gắng mua máy đời càng mới càng tốt."
+                android:textColor="#A6A3A3"
+                android:textSize="@dimen/sp_15" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_12"
+                android:text="3. Ổ cứng"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_15"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_2"
+                android:text="Ổ cứng cũng là một trong những yếu tố cần quan tâm khi chọn mua laptop. Hiện nay, ổ cứng laptop thường được biết đến với 2 loại: SSD và HDD. Ổ cứng SSD cho tốc độ chạy ứng dụng, đọc, ghi, khả năng truy xuất dữ liệu và truyền dữ liệu nhanh gấp nhiều lần so với ổ HDD, đồng thời tuổi thọ cũng cao hơn. Hội tụ nhiều ưu điểm nổi trội nên chi phí bỏ ra để sở hữu ổ cứng SSD cũng cao hơn, bạn nên cân nhắc khi chọn giữa 2 loại ổ cứng này."
+                android:textColor="#A6A3A3"
+                android:textSize="@dimen/sp_15" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_12"
+                android:text="4. Card đồ họa"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_15"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_2"
+                android:text="Nếu chỉ dùng máy tính để thực hiện các công việc cơ bản như lướt web, soạn thảo văn bản hay tính toán đơn giản trên Excel thì không nhất thiết phải trang bị một chiếc laptop có card đồ hoạ rời do bộ vi xử lý đã đủ sức mạnh để đảm đương.
+Nhưng nếu bạn thực hiện các tác vụ nặng hơn trên máy tính như thiết kế đồ họa, chỉnh sửa ảnh bằng các công cụ chuyên dụng như Photoshop, hay chơi các tựa game cấu hình cao, đòi hỏi nhiều sự xử lý thì khi đó chắc chắn laptop của bạn sẽ cần đến một chiếc card đồ hoạ rời để bổ sung sức mạnh."
+                android:textColor="#A6A3A3"
+                android:textSize="@dimen/sp_15" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_12"
+                android:text="5. Bàn phím"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_15"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_4"
+                android:text="Khi chọn mua laptop, tốt nhất bạn nên chọn những chiếc máy thiết kế bàn phím có độ nảy tốt sẽ giúp việc soạn thảo và nhập dữ liệu dễ dàng hơn. Cùng với đó, chọn mua máy có đèn bàn phím sẽ rất hiệu quả cho việc sử dụng ở nơi thiếu ánh sáng nhất là về ban đêm."
+                android:textColor="#A6A3A3"
+                android:textSize="@dimen/sp_15" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

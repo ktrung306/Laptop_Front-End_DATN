@@ -1,0 +1,131 @@
+package com.hcm.sale_laptop.data.local.prefs;
+
+import android.content.Context;
+import android.content.SharedPreferences;
+
+import com.google.gson.Gson;
+
+import java.lang.reflect.Type;
+import java.util.List;
+
+public class SharedPrefManager {
+    private static final String PREF_NAME = "app_prefs"; // Tên file SharedPreferences
+    private static SharedPrefManager instance;
+    private final SharedPreferences sharedPreferences;
+    private final SharedPreferences.Editor editor;
+
+    // Constructor là private để đảm bảo rằng chỉ có một instance được tạo (Singleton pattern)
+    private SharedPrefManager(Context context) {
+        sharedPreferences = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+    }
+
+    // Đảm bảo chỉ tạo một instance duy nhất
+    public static synchronized SharedPrefManager getInstance(Context context) {
+        if (instance == null) {
+            instance = new SharedPrefManager(context);
+        }
+        return instance;
+    }
+
+    // Lưu boolean
+    public void saveBoolean(String key, boolean value) {
+        editor.putBoolean(key, value);
+        editor.apply();
+    }
+
+    // Lấy boolean
+    public boolean getBoolean(String key, boolean defaultValue) {
+        return sharedPreferences.getBoolean(key, defaultValue);
+    }
+
+    // Lưu String
+    public void saveString(String key, String value) {
+        editor.putString(key, value);
+        editor.apply();
+    }
+
+    // Lấy String
+    public String getString(String key, String defaultValue) {
+        return sharedPreferences.getString(key, defaultValue);
+    }
+
+    // Lưu int
+    public void saveInt(String key, int value) {
+        editor.putInt(key, value);
+        editor.apply();
+    }
+
+    // Lấy int
+    public int getInt(String key, int defaultValue) {
+        return sharedPreferences.getInt(key, defaultValue);
+    }
+
+    // Lưu float
+    public void saveFloat(String key, float value) {
+        editor.putFloat(key, value);
+        editor.apply();
+    }
+
+    // Lấy float
+    public float getFloat(String key, float defaultValue) {
+        return sharedPreferences.getFloat(key, defaultValue);
+    }
+
+    // Lưu long
+    public void saveLong(String key, long value) {
+        editor.putLong(key, value);
+        editor.apply();
+    }
+
+    // Lấy long
+    public long getLong(String key, long defaultValue) {
+        return sharedPreferences.getLong(key, defaultValue);
+    }
+
+    // Xóa dữ liệu với khóa cụ thể
+    public void removeKey(String key) {
+        editor.remove(key);
+        editor.apply();
+    }
+
+    // Xóa toàn bộ dữ liệu trong SharedPreferences
+    public void clear() {
+        editor.clear();
+        editor.apply();
+    }
+
+    // Lưu object dưới dạng JSON
+    public void saveObject(String key, Object object) {
+        final Gson gson = new Gson();
+        final String json = gson.toJson(object);
+        editor.putString(key, json);
+        editor.apply();
+    }
+
+    // Lấy object từ JSON
+    public <T> T getObject(String key, Class<T> classOfT) {
+        final Gson gson = new Gson();
+        final String json = sharedPreferences.getString(key, null);
+        return gson.fromJson(json, classOfT);
+    }
+
+    // Lưu danh sách Object
+    public <T> void saveListObject(String key, List<T> list) {
+        final Gson gson = new Gson();
+        final String json = gson.toJson(list);
+        editor.putString(key, json);
+        editor.apply();
+    }
+
+    // Lấy danh sách Object từ SharedPreferences
+    public <T> List<T> getListObject(String key, Type type) {
+        final String json = sharedPreferences.getString(key, null);
+        final Gson gson = new Gson();
+        if (json == null) {
+            return null;
+        }
+        return gson.fromJson(json, type);
+    }
+}
+

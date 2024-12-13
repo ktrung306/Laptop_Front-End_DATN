@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DBDADA">
+
+    <View
+        android:id="@+id/view_header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_52"
+        android:background="#AADFEF"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_marginEnd="@dimen/dp_8"
+        android:background="#F9F9CE"
+        app:layout_constraintBottom_toBottomOf="@id/ln1"
+        app:layout_constraintEnd_toEndOf="@id/ln1"
+        app:layout_constraintStart_toStartOf="@id/image_view"
+        app:layout_constraintTop_toTopOf="@id/ln1" />
+
+    <ImageButton
+        android:id="@+id/btn_back_arrow"
+        android:layout_width="@dimen/dp_30"
+        android:layout_height="@dimen/dp_30"
+        android:layout_marginStart="@dimen/dp_16"
+        android:background="@drawable/circular_image_button"
+        android:contentDescription="@string/todo"
+        android:padding="@dimen/dp_5"
+        android:scaleType="fitXY"
+        android:src="@drawable/baseline_arrow_back_ios_new_36"
+        app:layout_constraintBottom_toBottomOf="@id/view_header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/view_header" />
+
+    <TextView
+        android:id="@+id/txt_header"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/dp_5"
+        android:layout_marginEnd="@dimen/dp_5"
+        android:gravity="center"
+        android:text="Đánh giá"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_22"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="104dp"
+        android:layout_height="86dp"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_marginTop="@dimen/dp_8"
+        android:padding="5dp"
+        android:src="@drawable/change_pass_avatar"
+        app:layout_constraintBottom_toBottomOf="@id/ln1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ln1"
+        tools:ignore="ContentDescription" />
+
+    <LinearLayout
+        android:id="@+id/ln1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="@dimen/dp_8"
+        android:layout_marginEnd="@dimen/dp_8"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/image_view"
+        app:layout_constraintTop_toBottomOf="@+id/view_header">
+
+        <TextView
+            android:id="@+id/txt_order_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/orders_sold"
+            android:textColor="@color/black55"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvNameProduct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Asus Gaming G731-VEV089T"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.900.000"
+            android:textColor="@color/black55"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Số lượng :"
+                android:textColor="@color/black55"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvQuantity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="1"
+                android:textColor="@color/black55"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatRatingBar
+            android:id="@+id/ratingBar"
+            style="@style/customRatingBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginTop="@dimen/dp_8"
+            android:layout_marginEnd="@dimen/dp_12"
+            android:isIndicator="false"
+            android:numStars="5"
+            android:rating="4.5"
+            android:stepSize="0.5" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/etReason"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_170"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_marginTop="@dimen/dp_24"
+        android:layout_marginEnd="@dimen/dp_8"
+        android:layout_marginBottom="16dp"
+        android:background="@android:color/white"
+        android:gravity="top|start"
+        android:hint="Hãy chia sẻ lý do tại sao bạn hủy đơn hàng này nhé !"
+        android:inputType="textMultiLine"
+        android:padding="8dp"
+        android:scrollbars="vertical"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/darker_gray"
+        app:layout_constraintTop_toBottomOf="@id/ln1"
+        tools:ignore="Autofill" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_submit"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_50"
+        android:layout_margin="@dimen/dp_16"
+        android:background="@drawable/round_button_submit_review"
+        android:text="GỬI ĐÁNH GIÁ"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_20"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
